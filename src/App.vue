@@ -1,11 +1,7 @@
 <template>
-<div>
-  <template v-for="name in names" >
-    <h2 v-if="name==='Diana'" :key="name">{{name}}: </h2>
-    
-  </template><br>
-  <button @click="shuffle">Shuffle!</button>
-</div>
+  <h2>Add Method: {{add(1, 2, 3)}}</h2>
+  <h2>Add Method: {{add(3, 5, 6)}}</h2>
+  <h2>multiply Method: {{multiply(baseValue)}}</h2>
 </template>
 
 <script>
@@ -14,8 +10,17 @@ export default {
   name: 'App',
   data() {
     return {
-      names: ['Bruce', 'Clark', 'Diana', 'Barry'],
+      baseMultiplier: 5,
+      baseValue: 3
     };
+  },
+  methods: {
+    add(a, b, c) {
+      return a + b + c
+    },
+    multiply(num) {
+      return num * this.baseMultiplier
+    }
   },
 };
 </script>
